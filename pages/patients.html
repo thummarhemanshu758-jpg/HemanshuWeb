@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients - Hemanshu Web HMS</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="brand">
+            <h2>Hemanshu Web</h2>
+            <span>Hospital Management</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="patients.html" class="active">Patients</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="billing.html">Billing</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1 class="page-title">Patient Management</h1>
+        </header>
+
+        <!-- Admission Form -->
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Register New Patient</h2>
+            <br>
+            <form onsubmit="handlePatientSubmit(event)">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="form-group">
+                        <label for="patientName">Full Name</label>
+                        <input type="text" id="patientName" class="form-control" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age</label>
+                        <input type="number" id="patientAge" class="form-control" placeholder="e.g. 34" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender</label>
+                        <select id="patientGender" class="form-control" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientStatus">Status</label>
+                        <select id="patientStatus" class="form-control" required>
+                            <option value="Admitted">Admitted</option>
+                            <option value="Outpatient">Outpatient</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Register Patient</button>
+            </form>
+        </div>
+
+        <!-- Patient Records Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTableBody">
+                    <tr>
+                        <td>#P-1001</td>
+                        <td>Sneha Gupta</td>
+                        <td>29</td>
+                        <td>Female</td>
+                        <td><span class="badge badge-success">Admitted</span></td>
+                    </tr>
+                    <tr>
+                        <td>#P-1002</td>
+                        <td>Vikram Singh</td>
+                        <td>45</td>
+                        <td>Male</td>
+                        <td><span class="badge badge-warning">Outpatient</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../javascript/main.js"></script>
+</body>
+</html>

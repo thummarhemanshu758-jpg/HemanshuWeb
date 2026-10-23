@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hemanshu Web HMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="brand">
+            <h2>Hemanshu Web</h2>
+            <span>Hospital Management</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="pages/patients.html">Patients</a></li>
+            <li><a href="pages/doctors.html">Doctors</a></li>
+            <li><a href="pages/appointments.html">Appointments</a></li>
+            <li><a href="pages/billing.html">Billing</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <header>
+            <h1 class="page-title">Dashboard Overview</h1>
+            <span>System Status: <strong style="color: green;">Online</strong></span>
+        </header>
+
+        <!-- KPI Metrics Grid -->
+        <div class="grid-4">
+            <div class="card stat-card">
+                <h3>Total Patients</h3>
+                <div class="value">1,248</div>
+            </div>
+            <div class="card stat-card">
+                <h3>Active Doctors</h3>
+                <div class="value">42</div>
+            </div>
+            <div class="card stat-card">
+                <h3>Available Beds</h3>
+                <div class="value">18 / 100</div>
+            </div>
+            <div class="card stat-card">
+                <h3>Pending Appointments</h3>
+                <div class="value">29</div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="card">
+            <h2>Recent Admissions</h2>
+            <br>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#P-1092</td>
+                            <td>Rahul Sharma</td>
+                            <td>Cardiology</td>
+                            <td><span class="badge badge-success">Admitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>#P-1093</td>
+                            <td>Priya Patel</td>
+                            <td>Neurology</td>
+                            <td><span class="badge badge-warning">Outpatient</span></td>
+                        </tr>
+                        <tr>
+                            <td>#P-1094</td>
+                            <td>Amit Verma</td>
+                            <td>Orthopedics</td>
+                            <td><span class="badge badge-success">Admitted</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/main.js"></script>
+</body>
+</html>

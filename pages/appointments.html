@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Hemanshu Web HMS</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="brand">
+            <h2>Hemanshu Web</h2>
+            <span>Hospital Management</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="patients.html">Patients</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="appointments.html" class="active">Appointments</a></li>
+            <li><a href="billing.html">Billing</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1 class="page-title">Appointments</h1>
+        </header>
+
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Book New Appointment</h2>
+            <br>
+            <form onsubmit="handleAppointmentSubmit(event)">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="form-group">
+                        <label for="appPatientName">Patient Name</label>
+                        <input type="text" id="appPatientName" class="form-control" placeholder="Patient Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appDoctor">Doctor</label>
+                        <select id="appDoctor" class="form-control" required>
+                            <option value="Dr. Aris Mehta">Dr. Aris Mehta (Cardiology)</option>
+                            <option value="Dr. Sunita Rao">Dr. Sunita Rao (Neurology)</option>
+                            <option value="Dr. Rajesh Iyer">Dr. Rajesh Iyer (Orthopedics)</option>
+                            <option value="Dr. Neha Kapoor">Dr. Neha Kapoor (Pediatrics)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appDate">Date</label>
+                        <input type="date" id="appDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appTime">Time</label>
+                        <input type="time" id="appTime" class="form-control" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Schedule Appointment</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Assigned Doctor</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentTableBody">
+                    <tr>
+                        <td>Karan Johar</td>
+                        <td>Dr. Aris Mehta</td>
+                        <td>2026-10-25 10:30 AM</td>
+                        <td><span class="badge badge-warning">Confirmed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../javascript/main.js"></script>
+</body>
+</html>

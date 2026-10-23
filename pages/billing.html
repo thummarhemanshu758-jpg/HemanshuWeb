@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - Hemanshu Web HMS</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="brand">
+            <h2>Hemanshu Web</h2>
+            <span>Hospital Management</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="patients.html">Patients</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="billing.html" class="active">Billing</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1 class="page-title">Billing & Invoices</h1>
+        </header>
+
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Generate Invoice</h2>
+            <br>
+            <form onsubmit="handleBillingSubmit(event)">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="form-group">
+                        <label for="billPatient">Patient Name</label>
+                        <input type="text" id="billPatient" class="form-control" placeholder="Patient Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="billAmount">Amount ($)</label>
+                        <input type="number" id="billAmount" step="0.01" class="form-control" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="billStatus">Payment Status</label>
+                        <select id="billStatus" class="form-control" required>
+                            <option value="Paid">Paid</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Overdue">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Create Invoice</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Patient Name</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="billingTableBody">
+                    <tr>
+                        <td>#INV-88201</td>
+                        <td>Rahul Sharma</td>
+                        <td>$450.00</td>
+                        <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#INV-88202</td>
+                        <td>Priya Patel</td>
+                        <td>$120.00</td>
+                        <td><span class="badge badge-warning">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../javascript/main.js"></script>
+</body>
+</html>
